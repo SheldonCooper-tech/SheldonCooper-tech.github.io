@@ -154,8 +154,9 @@ body {
   background: rgba(15, 23, 42, 0.9);
   border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.4);
-  padding: 12px 14px 14px;
+  padding: 16px 18px 18px; /* +2px padding */
   max-width: 380px;
+  cursor: pointer;
 }
 
 .step-label {
@@ -163,35 +164,49 @@ body {
   color: var(--text-secondary);
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .step-pills {
   display: flex;
   gap: 6px;
-  margin: 8px 0 10px;
+  margin: 8px 0 12px;
 }
 
 .pill {
   flex: 1;
+  padding: 10px 12px; /* +2px padding */
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.4);
-  background: transparent;
+  background: rgba(15, 23, 42, 0.95); /* темніший фон */
   color: var(--text-secondary);
   font-size: 11px;
-  padding: 6px 8px;
-  cursor: pointer;
+  cursor: pointer !important; /* примусова курсор */
   transition: all 0.2s ease;
+  font-weight: 500;
+  user-select: none; /* не виділяти текст */
+  position: relative;
+  overflow: hidden;
+}
+
+.pill:hover {
+  background: rgba(124, 58, 237, 0.25) !important; /* hover ефект */
+  border-color: rgba(124, 58, 237, 0.6);
+  color: var(--text-primary) !important;
 }
 
 .pill.active {
-  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.35), rgba(15, 23, 42, 1));
-  color: #e2e8f0;
-  border-color: rgba(124, 58, 237, 0.7);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.6), rgba(168, 85, 247, 0.4)) !important;
+  border-color: rgba(124, 58, 237, 0.9);
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.8);
+  font-weight: 600;
 }
 
 .step-output {
   font-size: 0.9rem;
   color: var(--text-primary);
+  line-height: 1.4;
 }
 
 /* Forms & cards */
