@@ -3,40 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Introvert Coach</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <title>AI Introvert Coach – Invite-only AI Fitness for Introverts</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
-  <div class="floating-orb orb-1"></div>
-  <div class="floating-orb orb-2"></div>
-
-  <!-- HERO -->
+  <!-- HERO WITH INTERACTIVE ENERGY SLIDER -->
   <header class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-main">
+        <div class="hero-left">
           <div class="logo">AI Introvert Coach</div>
-          <h1>
-            Quiet training,<br>
-            <span class="highlight">built for you</span>
-          </h1>
-          <p>
-            No gym. No groups. AI reads your energy and builds 
-            the one workout you can actually do today.
+          <h1>The AI that trains <span class="highlight">with</span> you</h1>
+          <p class="hero-subtitle">
+            Reads biometrics, mood, energy. Creates one workout that fits 
+            exactly how you feel today. No gym. No groups. Just progress.
           </p>
-          <div class="cta-stack">
-            <button class="btn-primary">Join waitlist</button>
-            <button class="btn-secondary">Watch demo (30s)</button>
+
+          <!-- INTERACTIVE ENERGY SLIDER #1 -->
+          <div class="interactive-block energy-slider">
+            <div class="slider-label">
+              <span>Your energy today:</span>
+              <span id="energy-value">Low</span>
+            </div>
+            <input type="range" id="energy-range" min="0" max="100" value="30">
+            <div class="slider-output" id="energy-output">
+              10min walk + 5min mobility. Maintenance mode.
+            </div>
+            <button class="btn-ghost" onclick="scrollToForm()">Get this plan →</button>
           </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-right">
           <div class="phone-mockup">
             <div class="phone-screen">
-              <div class="app-preview">
-                <div class="preview-header">Today</div>
-                <div class="preview-mood">Energy: <span class="mood-low">Low</span></div>
-                <div class="preview-plan">15min quiet walk<br>+ mobility</div>
+              <div class="mock-workout">
+                <div class="workout-header">
+                  <span>Today</span>
+                  <div class="energy-bar" id="mock-energy-bar">
+                    <div class="energy-fill"></div>
+                  </div>
+                </div>
+                <div class="workout-plan" id="mock-plan">
+                  Loading your plan...
+                </div>
               </div>
             </div>
           </div>
@@ -45,46 +54,112 @@
     </div>
   </header>
 
-  <!-- FEATURES -->
-  <section class="features">
+  <!-- INTERACTIVE QUIZ BLOCK -->
+  <section class="quiz-section">
     <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Reads your body</h3>
-          <p>HRV, sleep, stress. No manual input.</p>
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h2>Is this for you?</h2>
+          <p>Answer 3 quick questions</p>
         </div>
-        <div class="feature-card">
-          <h3>Daily adaptation</h3>
-          <p>One 15s check-in. AI builds your session.</p>
+        <div class="quiz-steps" id="quiz-steps">
+          <div class="quiz-step active">
+            <p>How consistent are you?</p>
+            <div class="quiz-options">
+              <button class="quiz-btn" data-answer="0">Never start</button>
+              <button class="quiz-btn" data-answer="1">Start/stop</button>
+              <button class="quiz-btn" data-answer="2">Pretty good</button>
+            </div>
+          </div>
+          <div class="quiz-step">
+            <p>What drains you most?</p>
+            <div class="quiz-options">
+              <button class="quiz-btn" data-answer="gym">Gyms/groups</button>
+              <button class="quiz-btn" data-answer="energy">Energy crashes</button>
+              <button class="quiz-btn" data-answer="planning">Overplanning</button>
+            </div>
+          </div>
+          <div class="quiz-step">
+            <p>Tracker?</p>
+            <div class="quiz-options">
+              <button class="quiz-btn" data-answer="watch">Apple Watch</button>
+              <button class="quiz-btn" data-answer="ring">Oura Ring</button>
+              <button class="quiz-btn" data-answer="none">Phone only</button>
+            </div>
+          </div>
         </div>
-        <div class="feature-card">
-          <h3>No social noise</h3>
-          <p>Private. Silent. Your progress only.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Learns your rhythm</h3>
-          <p>After 2 weeks, it knows your cycles.</p>
+        <div class="quiz-result" id="quiz-result">
+          <h3 id="quiz-title">Perfect fit!</h3>
+          <p id="quiz-desc"></p>
+          <button class="btn-primary" onclick="scrollToForm()">Get your invite</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INVITE -->
-  <section class="invite">
+  <!-- FEATURES WITH HOVER REVEAL -->
+  <section class="features-section">
     <div class="container">
-      <div class="invite-grid">
-        <div class="invite-text">
-          <h2>Invite‑only beta</h2>
-          <p>50 spots. First wave. Shape the product.</p>
-          <ul>
-            <li>Free during beta</li>
-            <li>Direct team access</li>
-            <li>Lifetime early rate</li>
-          </ul>
+      <h2>AI does this automatically</h2>
+      <div class="features-grid">
+        <div class="feature-item" data-feature="hrv">
+          <h3>HRV Load Manager</h3>
+          <div class="feature-reveal">
+            Reads heart rate variability every morning. Adjusts load before coffee.
+          </div>
         </div>
-        <form class="invite-form">
-          <input type="text" placeholder="Your email" required>
-          <button type="submit">Get invite</button>
+        <div class="feature-item" data-feature="sleep">
+          <h3>Sleep Integration</h3>
+          <div class="feature-reveal">
+            Poor sleep = lighter sessions. Protects you from injury days.
+          </div>
+        </div>
+        <div class="feature-item" data-feature="patterns">
+          <h3>Pattern Learning</h3>
+          <div class="feature-reveal">
+            Learns your social hangover days, peak focus windows, recovery cycles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITE FORM -->
+  <section class="form-section" id="invite-form-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <form id="lead-form" class="main-form">
+          <h2>Join first 50 introverts</h2>
+          <p>Free beta. Direct team access. Lifetime early rate.</p>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Telegram (optional)</label>
+              <input type="text" name="telegram">
+            </div>
+            <div class="form-group">
+              <label>Consistency now</label>
+              <select name="consistency">
+                <option>Not working out</option>
+                <option>1-2x/week</option>
+                <option>3-4x/week</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Send application</button>
+          <p class="form-note">No spam. One message when your spot opens.</p>
         </form>
       </div>
     </div>
@@ -92,10 +167,10 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 AI Introvert Coach. Built for quiet progress.</p>
+      <p>© 2026 AI Introvert Coach</p>
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
