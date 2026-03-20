@@ -3,261 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Introvert Coach – Quietly Smarter Training</title>
-  <meta name="description" content="Invite-only AI fitness coach for introverts. Reads your biometrics, mood and energy to quietly design the one workout you can actually do today.">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <title>AI Introvert Coach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
+  <div class="floating-orb orb-1"></div>
+  <div class="floating-orb orb-2"></div>
+
+  <!-- HERO -->
   <header class="hero">
-    <div class="hero-glow hero-glow-top"></div>
-    <div class="hero-glow hero-glow-bottom"></div>
-
-    <div class="container hero-content">
-      <div class="hero-text">
-        <div class="logo">AI Introvert Coach</div>
-
-        <p class="eyebrow">Invite‑only • Built for introverts</p>
-
-        <h1>
-          Your silent
-          <span class="hero-highlight">AI training brain</span>
-        </h1>
-
-        <p class="subtitle">
-          No gym. No groups. No shouting.  
-          Just one clear, realistic workout — generated for how you actually feel today.
-        </p>
-
-        <div class="hero-tags">
-          <span class="tag">Reads biometrics</span>
-          <span class="tag">Understands mood</span>
-          <span class="tag">Adjusts daily load</span>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="logo">AI Introvert Coach</div>
+          <h1>
+            Quiet training,<br>
+            <span class="highlight">built for you</span>
+          </h1>
+          <p>
+            No gym. No groups. AI reads your energy and builds 
+            the one workout you can actually do today.
+          </p>
+          <div class="cta-stack">
+            <button class="btn-primary">Join waitlist</button>
+            <button class="btn-secondary">Watch demo (30s)</button>
+          </div>
         </div>
-
-        <div class="hero-steps card-mini">
-          <span class="step-label">Today looks like:</span>
-          <div class="step-pills">
-            <button class="pill active" data-mode="low">Low energy</button>
-            <button class="pill" data-mode="ok">“Okay” day</button>
-            <button class="pill" data-mode="high">High focus</button>
+        <div class="hero-visual">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="app-preview">
+                <div class="preview-header">Today</div>
+                <div class="preview-mood">Energy: <span class="mood-low">Low</span></div>
+                <div class="preview-plan">15min quiet walk<br>+ mobility</div>
+              </div>
+            </div>
           </div>
-          <p class="step-output" id="step-output">
-            10‑minute decompression walk + 5‑minute mobility. No guilt, just maintenance.
-          </p>
         </div>
-      </div>
-
-      <div class="hero-form-wrapper">
-        <form id="hero-form" class="card">
-          <h2>Join the first 50 introverts</h2>
-          <p class="form-pre-note">
-            Put your name on the invite list. We onboard people in small batches, quietly.
-          </p>
-
-          <div class="form-group">
-            <label for="hero-name">Name</label>
-            <input type="text" id="hero-name" name="name" placeholder="Alex" required>
-          </div>
-
-          <div class="form-group">
-            <label for="hero-contact">Email or Telegram</label>
-            <input type="text" id="hero-contact" name="contact" placeholder="email or @handle" required>
-          </div>
-
-          <div class="form-group">
-            <label for="hero-introvert">You are more...</label>
-            <select id="hero-introvert" name="introvertLevel" required>
-              <option value="">Select one</option>
-              <option value="soft">“I need quiet to recharge”</option>
-              <option value="strong">“Crowds drain me fast”</option>
-              <option value="deep">“Silence is home”</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn primary-btn">
-            Request invite →
-          </button>
-
-          <p class="form-note">
-            No spam. One message when your slot opens.
-          </p>
-          <p class="form-message" id="hero-form-message"></p>
-        </form>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- WHAT IT DOES -->
-    <section id="for-whom" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>What the AI actually does for you</h2>
-          <p class="section-intro">
-            Less “program”. More quiet, adaptive system that doesn’t punish you for being human.
-          </p>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Reads your body</h3>
+          <p>HRV, sleep, stress. No manual input.</p>
         </div>
-
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Understands your body</h3>
-            <p>
-              Connect your watch or ring. The AI reads HRV, sleep and stress to know when
-              to push and when to protect you from burnout.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Checks in in seconds</h3>
-            <p>
-              One tiny mood & energy check in the morning. No journaling. No essays.
-              Three taps, and it knows your capacity for today.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Builds today's workout</h3>
-            <p>
-              You get one clear session: duration, intensity, exercises.
-              If it's “one of those days” — it auto‑switches to a shorter, softer plan.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Learns your patterns</h3>
-            <p>
-              After a few weeks, it learns your rhythm: social hangovers, deep focus days,
-              recovery needs — and plans around them.
-            </p>
-          </article>
+        <div class="feature-card">
+          <h3>Daily adaptation</h3>
+          <p>One 15s check-in. AI builds your session.</p>
+        </div>
+        <div class="feature-card">
+          <h3>No social noise</h3>
+          <p>Private. Silent. Your progress only.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Learns your rhythm</h3>
+          <p>After 2 weeks, it knows your cycles.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SNAPSHOT BLOCK -->
-    <section id="how-it-works" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <h2>A day with AI Introvert Coach</h2>
-          <p class="section-intro">
-            No overwhelm. No 30‑minute setup. Here’s how it feels in real life.
-          </p>
+  <!-- INVITE -->
+  <section class="invite">
+    <div class="container">
+      <div class="invite-grid">
+        <div class="invite-text">
+          <h2>Invite‑only beta</h2>
+          <p>50 spots. First wave. Shape the product.</p>
+          <ul>
+            <li>Free during beta</li>
+            <li>Direct team access</li>
+            <li>Lifetime early rate</li>
+          </ul>
         </div>
-
-        <div class="timeline-grid">
-          <div class="timeline-item card">
-            <span class="timeline-time">07:42</span>
-            <h3>Wake up</h3>
-            <p>
-              AI already has your sleep and recovery stats from the night.
-            </p>
-          </div>
-          <div class="timeline-item card">
-            <span class="timeline-time">07:45</span>
-            <h3>3‑tap check‑in</h3>
-            <p>
-              “Energy?”, “Mood?”, “Social hangover?” — tap, tap, tap. Done.
-            </p>
-          </div>
-          <div class="timeline-item card">
-            <span class="timeline-time">07:47</span>
-            <h3>Today's session appears</h3>
-            <p>
-              18‑minute quiet strength block + 5‑minute breath reset.  
-              Fits between calls, no mental planning needed.
-            </p>
-          </div>
-          <div class="timeline-item card">
-            <span class="timeline-time">22:30</span>
-            <h3>System learns</h3>
-            <p>
-              AI updates your profile. Tomorrow's load adjusts automatically.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INVITE ONLY -->
-    <section id="invite-only" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Why we only invite a few</h2>
-          <p class="section-intro">
-            This isn’t a mass‑market fitness app. It’s a tool we’re building with a small group of people like you.
-          </p>
-        </div>
-
-        <div class="two-column">
-          <div>
-            <ul class="list">
-              <li>50 spots in the first wave. When they're gone, they’re gone.</li>
-              <li>Direct feedback channel — your experience shapes the AI.</li>
-              <li>Free during beta + lifetime early adopter rate after launch.</li>
-              <li>No ads. No data sales. Ever.</li>
-            </ul>
-          </div>
-          <div class="highlight-badge">
-            <p class="badge-label">Beta status</p>
-            <p class="badge-main">Accepting new introverts</p>
-            <p class="badge-sub">Wave 1 · 50 seats · <span class="badge-strong">Remaining: very few</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section id="final-cta" class="section section-alt">
-      <div class="container final-cta-container">
-        <div class="final-cta-text">
-          <h2>Want workouts that finally match your energy?</h2>
-          <p class="section-intro">
-            Tell the AI who you are in 30 seconds. We’ll do the rest when your invite unlocks.
-          </p>
-        </div>
-
-        <form id="lead-form" class="card">
-          <div class="form-group">
-            <label for="lead-name">Name</label>
-            <input type="text" id="lead-name" name="name" placeholder="First name is enough" required>
-          </div>
-          <div class="form-group">
-            <label for="lead-email">Email</label>
-            <input type="email" id="lead-email" name="email" placeholder="you@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="lead-activity">Right now you feel you are…</label>
-            <select id="lead-activity" name="activity" required>
-              <option value="">Select one</option>
-              <option value="stuck">Stuck — I can’t start</option>
-              <option value="on-off">On & off — I disappear every few weeks</option>
-              <option value="ok">Pretty active — but not smart about it</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="lead-struggle">What usually derails you?</label>
-            <textarea id="lead-struggle" name="struggle" rows="3"
-              placeholder="Social burnout, low energy, overthinking, anxiety, etc." required></textarea>
-          </div>
-          <button type="submit" class="btn primary-btn">
-            Send my profile →
-          </button>
-          <p class="form-note">
-            You’ll hear from a real human before the AI starts training you.
-          </p>
-          <p class="form-message" id="lead-form-message"></p>
+        <form class="invite-form">
+          <input type="text" placeholder="Your email" required>
+          <button type="submit">Get invite</button>
         </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> AI Introvert Coach. Built for quiet progress.</p>
+  <footer>
+    <div class="container">
+      <p>© 2026 AI Introvert Coach. Built for quiet progress.</p>
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
