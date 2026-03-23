@@ -1,121 +1,171 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!-- Базова технічна інформація сторінки: кодування, адаптивність, SEO -->
+    <!-- ЗМІНА: не чіпай ці рядки, вони забезпечують правильне відображення на мобільних -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
+
+    <!-- SEO Meta Tags: ЗМІНА: тут міняй title (назву вкладки браузера), description (попап при шарингу), keywords -->
+    <!-- ПРИКЛАД ЗМІНИ: <title>Мій Продукт | Бета</title> -->
     <title>FitNerd | Invite-Only AI Fitness Coach for Introverts</title>
     <meta name="description" content="An adaptive AI fitness coach designed for introverts. Skip the crowded gyms and rigid programs. Get a workout plan that adapts to your mood, energy, and biometrics.">
     <meta name="keywords" content="AI fitness coach, introvert workout, adaptive fitness, home workouts, fitness app beta">
     <meta name="author" content="Fit Nerd">
-    <!-- Favicon -->
+
+    <!-- Favicon: ЗМІНА: заміни favicon.ico на свій файл у папці з сайтом -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Підключення власних стилів (styles.css) — ЗМІНА: редагуй там додатковий дизайн -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Підключення іконок FontAwesome (іконки можна змінювати по класах типу fa-solid fa-...) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Підключення власного JS (script.js) — ЗМІНА: тут можеш додавати логіку, обробку форм тощо -->
     <script src="script.js"></script>
+
+    <!-- Tailwind CSS (CDN): utility-класи для швидкого стилювання елементів -->
     <script src="https://cdn.tailwindcss.com"></script>
    
-    <!-- Open Graph for Social Sharing -->
+    <!-- Open Graph для соціальних мереж: ЗМІНА: текст для прев’ю посилання у Facebook/Twitter -->
+    <!-- ПРИКЛАД: <meta property="og:title" content="Мій Продукт | Бета-доступ"> -->
     <meta property="og:title" content="Invite-Only AI Fitness Coach for Introverts">
     <meta property="og:description" content="If crowded gyms drain you, try a fitness coach built around your rhythm.">
     <meta property="og:type" content="website">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Налаштування Tailwind: ЗМІНА: тут змінюєш кольори бренду, шрифти -->
+    <!-- ПРИКЛАД ЗМІНИ КОЛЬОРУ: primary: '#22c55e' (зелений) замість '#6366f1' (фіолетовий) -->
+    <!-- Всі кнопки з bg-brand-primary автоматично зміняться! -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            primary: '#6366f1',
-                            secondary: '#818cf8',
-                            light: '#e0e7ff',
-                            accent: '#10b981'
+                            dark: '#0f172a',        <!-- колір фону -->
+                            primary: '#6366f1',     <!-- основний колір кнопок -->
+                            secondary: '#818cf8',   <!-- колір при наведенні -->
+                            light: '#e0e7ff',       <!-- світлі елементи -->
+                            accent: '#10b981'       <!-- додатковий акцент -->
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'], <!-- ЗМІНА: можеш поставити 'Roboto' -->
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts: ЗМІНА: тут підключається шрифт Inter, можеш змінити на інший -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Додаткові інлайн-стилі: ЗМІНА: можеш додати нові класи або змінити градієнт -->
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-text {
-            background: linear-gradient(to right, #818cf8, #c084fc);
+            background: linear-gradient(to right, #818cf8, #c084fc); /* ЗМІНА: міняй кольори градієнта */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
+
+<!-- Основне тіло сторінки: фон, базовий текстовий колір, згладжування -->
 <body class="bg-brand-dark text-slate-300 antialiased selection:bg-brand-primary selection:text-white">
 
-    <!-- Navigation -->
+    <!-- NAVIGATION: верхнє меню, логотип, лінки, кнопка Join Beta -->
     <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
+
+        <!-- Логотип і назва бренду: ЗМІНА: міняй текст "FitNerd", іконку, посилання -->
+        <!-- ПРИКЛАД ЗМІНИ ІКОНКИ: fa-solid fa-chart-line → fa-solid fa-dumbbell -->
         <div class="flex-shrink-0 flex items-center gap-2">
         <i class="fa-solid fa-chart-line text-finerd-accent text-2xl"></i>
         <a href="/" class="hover:no-underline">
-        <span class="font-bold text-xl text-white tracking-tight font-mono hover:text-finerd-accent transition-all duration-200 cursor-pointer">FitNerd<span class="text-finerd-accent">_</span></span>
+        <span class="font-bold text-xl text-white tracking-tight font-mono hover:text-finerd-accent transition-all duration-200 cursor-pointer">
+            FitNerd<span class="text-finerd-accent">_</span> <!-- ЗМІНА: пиши свою назву бренду -->
+        </span>
     </a>
 </div>
+
+                <!-- Основні пункти меню: ЗМІНА: міняй текст між <a> і </a>, href веде на id секції -->
+                <!-- ПРИКЛАД: <a href="#features" class="...">Чому ми</a> -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#features" class="text-sm font-medium hover:text-white transition">Why Us</a>
                     <a href="#how-it-works" class="text-sm font-medium hover:text-white transition">How it Works</a>
                 </div>
+
+                <!-- Кнопка в навігації: ЗМІНА: текст кнопки між <a> і </a> -->
                 <div>
                     <a href="#apply" class="bg-brand-primary hover:bg-brand-secondary text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-lg shadow-brand-primary/30">
-                        Join Beta
+                        Join Beta <!-- ПРИКЛАД: "Подати заявку" -->
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION: головний екран з заголовком, описом і кнопками -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <!-- Лівий блок: текст, заголовок, підзаголовок, кнопки -->
         <div class="md:w-1/2 space-y-8 text-center md:text-left">
+
+            <!-- Маленький бейдж Invite-only Beta: ЗМІНА: текст між <div> і </div> -->
             <div class="inline-block bg-slate-800 border border-slate-700 rounded-full px-4 py-1 text-sm font-medium text-brand-secondary mb-2">
-                <i class="fa-solid fa-lock mr-2 text-xs"></i> Invite-only Beta
+                <i class="fa-solid fa-lock mr-2 text-xs"></i> Invite-only Beta <!-- ПРИКЛАД: "Обмежений бета-доступ" -->
             </div>
+
+            <!-- Головний заголовок: ЗМІНА: текст між <h1> і </h1>, не чіпай <span class="gradient-text"> -->
+            <!-- ПРИКЛАД: An AI fitness coach for <span class="gradient-text">інтровертів</span> -->
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 An AI fitness coach for <span class="gradient-text">introverts</span>
             </h1>
+
+            <!-- Опис/сабтайтл під заголовком: ЗМІНА: текст між <p> і </p> -->
+            <!-- ПРИКЛАД: Якщо переповнені зали виснажують тебе... -->
             <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
                 If crowded gyms, loud trainers, and rigid programs drain you instead of energizing you, this coach is built around your rhythm, not against it.
             </p>
+
+            <!-- Кнопки у hero: ЗМІНА: текст кнопок між <a> і <i> -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
                 <a href="#apply" class="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3.5 rounded-full font-semibold transition text-center shadow-lg shadow-brand-primary/30 flex items-center justify-center gap-2">
-                    Apply for Early Access <i class="fa-solid fa-arrow-right"></i>
+                    Apply for Early Access <i class="fa-solid fa-arrow-right"></i> <!-- ПРИКЛАД: "Подати заявку" -->
                 </a>
                 <a href="#how-it-works" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3.5 rounded-full font-semibold transition text-center border border-slate-700">
-                    See How It Works
+                    See How It Works <!-- ПРИКЛАД: "Дивитись як працює" -->
                 </a>
             </div>
         </div>
+
+        <!-- Правий блок: картинка героя -->
         <div class="md:w-1/2 relative">
+            <!-- Декоративний градієнтний фон позаду картинки: ЗМІНА: кольори в from/to -->
             <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 to-purple-500/20 blur-3xl rounded-full"></div>
+
+            <!-- Головне зображення: ЗМІНА: src="твій_файл.jpg", alt="опис" -->
+            <!-- ПРИКЛАД: src="my-image.png" alt="Домашнє тренування" -->
             <img src="13c7f988b591c99e24359ea16b16101e.jpg" alt="Calm home workout" class="rounded-2xl shadow-2xl relative z-10 border border-slate-700/50 grayscale hover:grayscale-0 transition duration-700">
         </div>
     </section>
 
-    <!-- Problem / Features Section -->
+    <!-- FEATURES / PROBLEM SECTION: блок "чому ми" / проблеми та переваги -->
     <section id="features" class="py-20 bg-slate-900 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Заголовок секції і короткий опис: ЗМІНА: текст між <h2> і </h2>, <p> і </p> -->
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-white mb-4">Made for those who don't fit "classic" fitness</h2>
                 <p class="text-slate-400">Traditional fitness culture is loud and rigid. We offer a quiet, adaptive alternative.</p>
             </div>
+
+            <!-- Сітка з окремими фічами/проблемами: ЗМІНА: іконки, заголовки <h3>, тексти <p> -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
+
+                <!-- FEATURE 1: ЗМІНА: fa-volume-xmark, "Zero Gym Anxiety", текст -->
                 <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 hover:border-brand-primary/50 transition">
                     <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center text-brand-secondary mb-4">
                         <i class="fa-solid fa-volume-xmark text-xl"></i>
@@ -123,7 +173,8 @@
                     <h3 class="text-xl font-semibold text-white mb-2">Zero Gym Anxiety</h3>
                     <p class="text-slate-400 text-sm">You feel uncomfortable in crowded gyms and group classes. Work out at home or in quiet spaces without extra attention.</p>
                 </div>
-                <!-- Feature 2 -->
+
+                <!-- FEATURE 2: ЗМІНА: fa-face-smile-beam, "No Guilt-Tripping", текст -->
                 <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 hover:border-brand-primary/50 transition">
                     <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center text-brand-secondary mb-4">
                         <i class="fa-solid fa-face-smile-beam text-xl"></i>
@@ -131,7 +182,8 @@
                     <h3 class="text-xl font-semibold text-white mb-2">No Guilt-Tripping</h3>
                     <p class="text-slate-400 text-sm">Hate when trainers push or shame you for skipping workouts? Our AI encourages you gently without the toxic motivation.</p>
                 </div>
-                <!-- Feature 3 -->
+
+                <!-- FEATURE 3: ЗМІНА: fa-battery-half, "Energy-Aware", текст -->
                 <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 hover:border-brand-primary/50 transition">
                     <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center text-brand-secondary mb-4">
                         <i class="fa-solid fa-battery-half text-xl"></i>
@@ -139,20 +191,23 @@
                     <h3 class="text-xl font-semibold text-white mb-2">Energy-Aware</h3>
                     <p class="text-slate-400 text-sm">Your mood and energy fluctuate. Traditional programs lead to burnout; we respect your sleep, stress, and fatigue.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- HOW IT WORKS: блок із кроками 1–3 -->
     <section id="how-it-works" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Заголовок секції та підзаголовок: ЗМІНА: текст -->
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-white mb-4">How the AI coach works</h2>
             <p class="text-slate-400">3 simple steps from chaotic workouts to a system that adapts to you.</p>
         </div>
 
+        <!-- Вертикальна таймлайн-структура для 3 кроків: ЗМІНА: номери 1,2,3 лишаються, міняй <h3> і <p> у кожному -->
         <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
 
-            <!-- Step 1 -->
+            <!-- STEP 1: Connect your devices -- ЗМІНА: <h3> і <p> -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-dark bg-brand-primary text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">1</div>
                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800/80 p-6 rounded-2xl border border-slate-700 ml-4 md:ml-0 hover:-translate-y-1 transition duration-300">
@@ -161,7 +216,7 @@
                 </div>
             </div>
 
-            <!-- Step 2 -->
+            <!-- STEP 2: ЗМІНА: <h3> і <p> -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-dark bg-brand-primary text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div>
                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800/80 p-6 rounded-2xl border border-slate-700 ml-4 md:ml-0 hover:-translate-y-1 transition duration-300">
@@ -170,26 +225,29 @@
                 </div>
             </div>
 
-            <!-- Step 3 -->
+            <!-- STEP 3: ЗМІНА: <h3> і <p> -->
             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-dark bg-brand-primary text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div>
                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800/80 p-6 rounded-2xl border border-slate-700 ml-4 md:ml-0 hover:-translate-y-1 transition duration-300">
                     <h3 class="font-bold text-xl text-white mb-2">Get an adaptive plan</h3>
-                    <p class="text-slate-400 text-sm">Instead of a rigid program, you get a living plan: short sessions, micro‑workouts, recovery days, and gentle nudges when it’s a good time to move.</p>
+                    <p class="text-slate-400 text-sm">Instead of a rigid program, you get a living plan: short sessions, micro‑workouts, recovery days, and gentle nudges when it's a good time to move.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Why Invite Only -->
+    <!-- WHY INVITE ONLY: пояснення, чому закритий доступ -->
     <section class="py-20 bg-brand-primary/10 border-y border-brand-primary/20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Заголовок секції: ЗМІНА: текст <h2> -->
             <h2 class="text-3xl font-bold text-white mb-8">Why invite-only access?</h2>
+
+            <!-- Три картки з причинами: ЗМІНА: іконки fa-*, текст <p> -->
             <div class="grid md:grid-cols-3 gap-6 text-left">
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800">
-                    <i class="fa-solid fa-user-group text-brand-secondary mb-3 text-xl"></i>
-                    <p class="text-sm text-slate-300">We’re starting with a small wave of introverts to fine‑tune a true 1‑on‑1 experience instead of chasing volume.</p>
+                    <i class="fa-solid fa-user-group text-brand-secondary mb-3 text-xl"></i> <!-- ЗМІНА: інша іконка -->
+                    <p class="text-sm text-slate-300">We're starting with a small wave of introverts to fine‑tune a true 1‑on‑1 experience instead of chasing volume.</p>
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800">
                     <i class="fa-solid fa-wrench text-brand-secondary mb-3 text-xl"></i>
@@ -202,40 +260,57 @@
             </div>
         </div>
     </section>
-    <!-- CTA / Apply Form -->
+
+    <!-- APPLY / CTA FORM: форма заявки на бета-доступ -->
     <section id="apply" class="py-24 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700 relative overflow-hidden">
-            <!-- Decorative blur -->
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-brand-primary/20 blur-3xl pointer-events-none"></div>
 
+            <!-- Заголовок секції форми та опис: ЗМІНА: текст <h2> і <p> -->
             <div class="relative z-10 text-center mb-8">
                 <h2 class="text-3xl font-bold text-white mb-4">Apply for the first beta wave</h2>
-                <p class="text-slate-400">First beta wave has limited spots. Access will close once it’s full. Leave your details and we’ll match you with the ideal testing scenario.</p>
+                <p class="text-slate-400">First beta wave has limited spots. Access will close once it's full. Leave your details and we'll match you with the ideal testing scenario.</p>
             </div>
 
+            <!-- Форма заявки: ЗМІНА: лейбли <label>, плейсхолдери, текст кнопки -->
+            <!-- ЗМІНА: onsubmit="..." — текст alert або підключи реальну відправку -->
+            <!-- ПРИКЛАД: alert('Дякуємо! Ми зв'яжемося.'); -->
             <form class="space-y-4 relative z-10" onsubmit="event.preventDefault(); alert('Thanks for applying! (This is a demo form)');">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- Поле First Name: ЗМІНА: текст <label>, placeholder -->
                     <div>
                         <label class="block text-sm font-medium text-slate-400 mb-1">First Name</label>
                         <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="John">
                     </div>
+
+                    <!-- Поле Email: ЗМІНА: лейбл, placeholder -->
                     <div>
                         <label class="block text-sm font-medium text-slate-400 mb-1">Email Address</label>
                         <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="john@example.com">
                     </div>
                 </div>
+
+                <!-- Текстове поле: ЗМІНА: лейбл, placeholder -->
                 <div>
                     <label class="block text-sm font-medium text-slate-400 mb-1">What's your biggest struggle with traditional fitness?</label>
                     <textarea rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="E.g., I hate crowded spaces..."></textarea>
                 </div>
+
+                <!-- Кнопка форми: ЗМІНА: текст між <button> і <i> -->
                 <button type="submit" class="w-full bg-brand-primary hover:bg-brand-secondary text-white font-bold py-4 rounded-lg transition shadow-lg shadow-brand-primary/25 mt-4 flex justify-center items-center gap-2">
-                    Submit Application <i class="fa-solid fa-paper-plane"></i>
+                    Submit Application <i class="fa-solid fa-paper-plane"></i> <!-- ПРИКЛАД: "Відправити" -->
                 </button>
-                <p class="text-xs text-center text-slate-500 mt-4"><i class="fa-solid fa-lock mr-1"></i> Your information is secure and encrypted.</p>
+
+                <!-- Текст безпеки: ЗМІНА: текст <p> -->
+                <p class="text-xs text-center text-slate-500 mt-4">
+                    <i class="fa-solid fa-lock mr-1"></i> Your information is secure and encrypted.
+                </p>
             </form>
         </div>
     </section>
-    <!-- Footer -->
+
+    <!-- FOOTER: нижній колонтитул -->
+    <!-- ЗМІНА: рік ©, назва бренду, додай лінки на соцмережі -->
     <footer class="bg-brand-dark border-t border-slate-800 py-8 text-center">
         <p class="text-slate-500 text-sm">© 2026 FitNerd. All rights reserved. Designed for introverts.</p>
     </footer>
